@@ -1,0 +1,17 @@
+{% load static %}
+<html>
+	<head>
+		<title>ITEMS</title>
+		<script type="text/javascript" src="{% static 'jquery-3.3.1.min.js' %}"></script>		
+		<script type="text/javascript" charset="utf8" src="{% static 'DataTables/datatables.js' %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'DataTables/datatables.css' %}"/>
+		<script type="text/javascript" charset="utf8" src="{% static 'js/bootstrap.min.js' %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}"/>
+		<link rel="icon" href="{% static 'logo2.ico' %}">
+	</head>
+	<body>
+	{% block content%}
+	{% endblock %}
+	<center><a class="btn btn-primary" href="/">HOME</a></center>
+	</body>
+</html>

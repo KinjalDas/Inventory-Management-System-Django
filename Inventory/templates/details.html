@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<center>
+<div class="card" style="width: 50rem;">
+<div class="card-body">
+<form action="transfer" method="post">
+<div class="card-header">TRANSFER {{ item.name }}</div>
+{% csrf_token %}
+<input type="hidden" name="item" value="{{ item.name }}">
+<div class="form-group">
+<label for="quantity">Quantity</label>
+<input type="number" class="form-control" value="1" id="quantity" name="quantity" min="1" max="{{ item.quantity }}"/> 
+</div>
+<div class="form-group">
+<label for="client">Client</label>
+<select name="client" class="form-control" id="client">
+{% for client in clients %}
+<option value="{{ client.place }}">{{ client.place }}</option>
+{% endfor %}
+</select>
+</div>
+<input type="submit" class="btn btn-primary" value="TRANSFER">
+</form>
+</div>
+</div>
+</center>
+<br/>
+<center>
+<div class="card" style="width: 50rem;">
+<div class="card-body">
+<form action="return" method="post">
+<div class="card-header">RETURN {{ item.name }}</div>
+{% csrf_token %}
+<input type="hidden" name="item" value="{{ item.name }}">
+<div class="form-group">
+<label for="quantity">Quantity</label>
+<input type="number" class="form-control" value="1" id="quantity" name="quantity" min="1" max="{{ item.quantity }}"/>
+</div>
+<div class="form-group">
+<label for="client">Client</label>
+<select name="client" class="form-control" id="client">
+{% for client in clients %}
+<option value="{{ client.place }}">{{ client.place }}</option>
+{% endfor %}
+</select>
+</div>
+<input type="submit" class="btn btn-primary" value="RETURN">
+</form>
+</div>
+</div>
+</center>
+{% endblock %}
