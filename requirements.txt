@@ -19,7 +19,7 @@ Jinja2==3.1.2
 langcodes==3.3.0
 MarkupSafe==2.1.1
 murmurhash==1.0.7
-numpy==1.23.1
+numpy==1.21.6
 packaging==21.3
 pathy==0.6.2
 pipreqs==0.4.11
